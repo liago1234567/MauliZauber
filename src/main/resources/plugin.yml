@@ -2,25 +2,26 @@ name: MauliWinterEvent
 main: com.mauliwinterevent.MauliWinterEventPlugin
 version: 1.0.0
 api-version: '1.21'
-author: Liago1234567
-commands:
-  advent:
-    description: Öffnet den Adventskalender.
-    usage: /advent
-    permission: mauliwinter.advent
-  winterevent:
-    description: Admin-Befehle für das Winter-Event.
-    usage: /winterevent reload
-    permission: mauliwinter.admin
-permissions:
-  mauliwinter.advent:
-    default: true
-    description: Darf den Adventskalender öffnen.
-  mauliwinter.admin:
-    default: op
-    description: Admin für das Winter-Event.
+author: MauliCraft
 
-  weihnachtscosmetics:
-    description: Öffnet das Winter-Cosmetics-Menü.
-    usage: /weihnachtscosmetics
-    permission: mauliwinter.cosmetics
+commands:
+  winter:
+    description: Hauptbefehl Winter-Event
+    aliases: [winterzauber, mwe, mauliwinterevent]
+    permission: winter.user
+
+  advent:
+    description: Adventskalender öffnen
+    aliases: [kalender, adventskalender]
+    permission: winter.user
+
+  cosmetics:
+    description: Cosmetics Menü öffnen
+    aliases: [cosmetic, wintercosmetics, wc]
+    permission: winter.user
+
+permissions:
+  winter.user:
+    default: true
+  winter.admin:
+    default: op
