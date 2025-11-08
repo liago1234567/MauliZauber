@@ -74,16 +74,17 @@ public class Settings {
             Cosmetic cs = Cosmetic.from(c);
             if (cs != null) defaultCosmetics.add(cs);
         }
-        ConfigurationSection csd = conf.getConfigurationSection("rewards.special_days");
-        if (csd != null) {
-            for (String k : csd.getKeys(false)) {
-                java.util.List<String> raw = conf.getStringList("rewards.special_days." + k + ".cosmetics");
-                java.util.List<Cosmetic> list = new java.util.ArrayList<>();
-                for (String c : raw) {
-                    Cosmetic cs = Cosmetic.from(c);
-                    if (cs != null) list.add(cs);
-                }
-                specialDayCosmetics.put(k, list);
+      ConfigurationSection csd = conf.getConfigurationSection("rewards.special_days");
+if (csd != null) {
+    for (String k : csd.getKeys(false)) {
+        java.util.List<String> raw = conf.getStringList("rewards.special_days." + k + ".cosmetics");
+        java.util.List<Cosmetic> list = new java.util.ArrayList<>();
+        for (String c : raw) {
+            Cosmetic cs = Cosmetic.from(c);
+            if (cs != null) list.add(cs);
+        }
+        specialDayCosmetics.put(k, list);
+    }
            // ----- Getter -----
     public MonthDay start()            { return start; }
     public MonthDay end()              { return end; }
