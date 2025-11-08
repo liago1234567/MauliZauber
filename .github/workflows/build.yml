@@ -2,11 +2,12 @@ name: Build MauliWinterEvent
 
 on:
   push:
-    branches: [ main ]
+    branches: [ "main" ]
 
 jobs:
   build:
     runs-on: ubuntu-latest
+
     steps:
       
 name: Checkout repository
@@ -16,8 +17,8 @@ name: Checkout repository
 name: Setup Java
       uses: actions/setup-java@v3
       with:
-        distribution: temurin
-        java-version: 17
+        distribution: "temurin"
+        java-version: "17"
 
       
 name: Build with Maven
