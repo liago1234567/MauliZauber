@@ -84,35 +84,34 @@ public class Settings {
                     if (cs != null) list.add(cs);
                 }
                 specialDayCosmetics.put(k, list);
-            }
-        }
+           // ----- Getter -----
+    public MonthDay start()            { return start; }
+    public MonthDay end()              { return end; }
+    public boolean catchup()           { return catchup; }
+    public boolean dailyOneClaim()     { return dailyOneClaim; }
+    public String title()              { return title; }
+    public String bossbarTitle()       { return bossbarTitle; }
+    public String claimedPrefix()      { return claimedPrefix; }
+    public String availablePrefix()    { return availablePrefix; }
+    public String lockedPrefix()       { return lockedPrefix; }
+    public String euroSymbol()         { return euroSymbol; }
 
-    }
+    public String msgPrefix()          { return prefix; }
+    public String msgNotInEvent()      { return notInEvent; }
+    public String msgAlreadyClaimed()  { return alreadyClaimed; }
+    public String msgDailyLimit()      { return dailyLimit; }
+    public String msgClaimedSuccess()  { return claimedSuccess; }
+    public String msgReload()          { return reload; }
 
-    public MonthDay start() { return start; }
-    public MonthDay end() { return end; }
-    public boolean catchup() { return catchup; }
-    public boolean dailyOneClaim() { return dailyOneClaim; }
-    public String title() { return title; }
-    public String bossbarTitle() { return bossbarTitle; }
-    public String claimedPrefix() { return claimedPrefix; }
-    public String availablePrefix() { return availablePrefix; }
-    public String lockedPrefix() { return lockedPrefix; }
-    public String euroSymbol() { return euroSymbol; }
-    public String msgPrefix() { return prefix; }
-    public String msgNotInEvent() { return notInEvent; }
-    public String msgAlreadyClaimed() { return alreadyClaimed; }
-    public String msgDailyLimit() { return dailyLimit; }
-    public String msgClaimedSuccess() { return claimedSuccess; }
-    public String msgReload() { return reload; }
-
-    public List<String> commandsFor(LocalDate date) {
+    // ----- Rewards -----
+    public java.util.List<String> commandsFor(java.time.LocalDate date) {
         String key = mmdd.format(date);
         return specialDayCommands.getOrDefault(key, defaultCommands);
     }
-}
 
+    // ----- Cosmetics -----
     public java.util.List<Cosmetic> cosmeticsFor(java.time.LocalDate date) {
         String key = mmdd.format(date);
         return specialDayCosmetics.getOrDefault(key, defaultCosmetics);
     }
+}
