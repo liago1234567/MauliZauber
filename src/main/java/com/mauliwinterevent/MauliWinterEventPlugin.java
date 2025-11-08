@@ -14,18 +14,25 @@ public class MauliWinterEventPlugin extends JavaPlugin {
     private CosmeticsManager cosmetics;
 
     @Override
-    public void onEnable() {
-        saveDefaultConfig();
-        this.settings = new Settings(this);
-        this.storage = new Storage(this);
-        this.storage.init();
-        this.adventManager = new AdventManager(this, storage, settings);
-        this.cosmetics = new CosmeticsManager(this, storage, settings);
+public void onEnable() {
+    saveDefaultConfig();
+    this.settings = new Settings(this);
+    this.storage = new Storage(this);
+    this.storage.init();
+    this.adventManager = new AdventManager(this, storage, settings);
+    this.cosmetics = new CosmeticsManager(this, storage, settings);
 
-        getServer().getPluginManager().registerEvents(adventManager, this);
-        getServer().getPluginManager().registerEvents(cosmetics, this);
+    // Events registrieren
+    getServer().getPluginManager().registerEvents(adventManager, this);
+    getServer().getPluginManager().registerEvents(cosmetics, this);
 
-        getLogger().info("MauliWinterEvent aktiviert.");
+    // Commands registrieren
+    getCommand("winter").setExecutor(adventManager);
+    getCommand("advent").setExecutor(adventManager);
+    getCommand("cosmetics").setExecutor(cosmetics);
+
+    getLogger().info("MauliWinterEvent aktiviert.");
+}
     }
 
     @Override
