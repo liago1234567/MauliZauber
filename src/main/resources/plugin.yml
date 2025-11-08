@@ -6,9 +6,10 @@ author: MauliCraft
 
 commands:
   winter:
-    description: Hauptbefehl Winter-Event
-    aliases: [winterzauber, mwe, mauliwinterevent]
-    permission: winter.user
+winterevent:
+  description: Hauptbefehl Winter-Event
+  aliases: [winter, winterzauber, mwe, mauliwinterevent]
+  permission: winter.user
 
   advent:
     description: Adventskalender öffnen
