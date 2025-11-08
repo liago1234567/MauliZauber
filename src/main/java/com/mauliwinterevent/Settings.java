@@ -83,8 +83,10 @@ if (csd != null) {
             Cosmetic cs = Cosmetic.from(c);
             if (cs != null) list.add(cs);
         }
-        specialDayCosmetics.put(k, list);
+    specialDayCosmetics.put(k, list);
     }
+}
+
            // ----- Getter -----
     public MonthDay start()            { return start; }
     public MonthDay end()              { return end; }
